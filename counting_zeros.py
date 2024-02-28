@@ -24,10 +24,11 @@ def es2n2(S, k):
     for x in range(1, n + 1):
         max_y = n - 1 - x
         sum_x += S[x-1]
-        sum_y= 0
+        sum_y = 0
         for y in range(1, max_y + 1):
             sum_y += S[-y]
-            if sum_x + sum_y <= k:
+            total_sum = sum_x + sum_y
+            if total_sum <= k:
                 zeros = x_zeros[x-1] + y_zeros[y-1]
                 max_zeros = max(max_zeros, zeros)
 
@@ -39,5 +40,7 @@ def es2n2(S, k):
 
 S = [1, 0, 2, 8, 0, 5, 1, 6, 0, 0, 3]
 k = 8
+
+
 
 print(es2n2(S, k))
