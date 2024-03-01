@@ -31,7 +31,6 @@ def es2n2(S, k):
             if total_sum <= k:
                 zeros = x_zeros[x-1] + y_zeros[y-1]
                 max_zeros = max(max_zeros, zeros)
-
     print("S: " + str(S))
     print("x_zeros: " + str(x_zeros))#prova
     print("y_zeros: " + str(y_zeros))
