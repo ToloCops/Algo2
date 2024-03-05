@@ -1,4 +1,15 @@
 def es2n2(S, k):
+    """
+    Calculates the maximum number of zeros that can be obtained by splitting the list S into two parts,
+    such that the sum of the elements in each part is less than or equal to k.
+
+    Args:
+        S (list): The input list of integers.
+        k (int): The maximum sum allowed for each part.
+
+    Returns:
+        None
+    """
     n = len(S)
     x_zeros = [0] * n
     y_zeros = [0] * n
@@ -35,7 +46,7 @@ def es2n2(S, k):
     print("x_zeros: " + str(x_zeros))#prova
     print("y_zeros: " + str(y_zeros))
     print(max_zeros)
-    return 
+    return
 
 S = [1, 0, 2, 8, 0, 5, 1, 6, 0, 0, 3]
 k = 8

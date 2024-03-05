@@ -1,6 +1,18 @@
 def count_sink_from(u: int, G: list[list[int]], V: list[int]) -> int:
+    """
+    Counts the number of sink nodes reachable from a given node 'u' in a directed graph.
+
+    Args:
+        u (int): The starting node.
+        G (list[list[int]]): The adjacency list representation of the directed graph.
+        V (list[int]): A list to keep track of visited nodes.
+
+    Returns:
+        int: The count of sink nodes reachable from 'u'.
+    """
     V[u] = 1
-    if G[u] == []: return 1
+    if G[u] == []:
+        return 1
     count = 0
     for x in G[u]:
         if V[x] == 0:
