@@ -1,4 +1,4 @@
-def conta_pozzi_da(u: int, G: list[list[int]], V: list[int]) -> int:
+def count_sink_from(u: int, G: list[list[int]], V: list[int]) -> int:
     V[u] = 1
     if G[u] == []: return 1
     count = 0
@@ -23,4 +23,4 @@ G: list[list[int]] = [
 
 u = 1
 V = [0] * len(G)
-print(conta_pozzi_da(u, G, V))
+print(count_sink_from(u, G, V))
