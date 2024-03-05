@@ -13,9 +13,24 @@ def edge_orienting(u: int, G: list[list[int]], V: list[int]) -> list[list[int]]:
     if u == 0: return G
     return edge_orienting(u-1, G, V)
 
+def orient_all(u: int, G: list[list[int]], V: list[int]) -> list[list[int]]:
+    V[u] = 1
+    for x in G[u]:
+        if V[x] == 0:
+            if u in G[x]: 
+                G[u].remove(x)
+                orient_all(x, G, V)
+            else: orient_all(x, G, V)
+    return G
 
-n = 3
-G = complete_graph_gen(n)
-V = [0] * n
+G: list[list[int]] = [
+    [1],
+    [3],
+    [1, 4],
+    [4],
+    [3, 2],
+    [4]
+]
+V = [0] * len(G)
 print(G)
-print(edge_orienting(n-1, G, V))
+print(orient_all(0, G, V))
