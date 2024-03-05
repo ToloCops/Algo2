@@ -4,7 +4,7 @@ def count_sink_from(u: int, G: list[list[int]], V: list[int]) -> int:
     count = 0
     for x in G[u]:
         if V[x] == 0:
-            count += conta_pozzi_da(x, G, V)
+            count += count_sink_from(x, G, V)
     return count
 
 G: list[list[int]] = [
