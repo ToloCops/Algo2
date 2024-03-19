@@ -15,7 +15,7 @@ def find_points(G: list[list[int]]) -> list[int]:
     time = [0]
     V = [0] * len(G)
     D = [0] * len(G)
-    P = []
+    P: list[int] = []
     DFSr(0, 0, G, V, D, P, time)
     return P
 
