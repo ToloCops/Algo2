@@ -29,7 +29,7 @@ def is_tree(u: int, p, L: list[list[int]], V: list[int]) -> bool:
         bool: True if the graph is a tree, False otherwise.
     """
     found = True
-    V[u] += 1
+    V[u] = 1
     for x in L[u]:
         if V[x] == 0:
             found = found and is_tree(x, u, L, V)
