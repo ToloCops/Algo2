@@ -1,7 +1,22 @@
+## Given a set of houses located in a street of a certain lenght, find the
+## minimum number of dumpster in order to cover each house in range k
+
+
+
 def place_dumpsters(L: list[int], k: int) -> list[int]:
+    """
+    Places dumpsters along a street based on the given list of house positions and the maximum distance between dumpsters.
+
+    Args:
+        L (list[int]): A list of house positions along the street.
+        k (int): The maximum distance between dumpsters.
+
+    Returns:
+        list[int]: A list of dumpster positions.
+
+    """
     dumpsters = []
     street = L[-1]
-    #position = L[0]
     house = L[0]
     for i in range(k+1):
         if i == k or house + i == street:
