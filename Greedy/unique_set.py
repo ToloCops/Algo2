@@ -1,4 +1,17 @@
 def max_unique_set(G: list[list[tuple[int, int]]]) -> list[tuple[int, int]]:
+    """
+    Finds the maximum unique set of tuples in a given graph.
+
+    Args:
+        G (list[list[tuple[int, int]]]): The input graph represented as a list of lists of tuples.
+            Each tuple represents an edge in the graph, where the first element is the node index
+            and the second element is the weight of the edge.
+
+    Returns:
+        list[tuple[int, int]]: The maximum unique set of tuples in the graph. A tuple is considered
+            unique if its weight is the heaviest among all the tuples connected to the same node.
+
+    """
     unique: list[tuple[int, int]] = []
     for n in G:
         heaviest: tuple[int, int] = (-1, -1)
