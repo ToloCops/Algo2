@@ -1,4 +1,4 @@
-def max_unique_set(G: list[list[tuple[int, int]]]) -> list[tuple[int, int]]:
+def max_unique_set(G: list[list[tuple[int, int]]]) -> tuple[list[tuple[int, int]], int]:
     """
     Finds the maximum unique set of tuples in a given graph.
 
@@ -13,12 +13,15 @@ def max_unique_set(G: list[list[tuple[int, int]]]) -> list[tuple[int, int]]:
 
     """
     unique: list[tuple[int, int]] = []
+    max_weight = 0
     for n in G:
         heaviest: tuple[int, int] = (-1, -1)
         for arch in n:
             if heaviest[1] < arch[1]: heaviest = arch
-        if heaviest[1] > 0: unique.append(heaviest)
-    return unique
+        if heaviest[1] > 0:
+            unique.append(heaviest)
+            max_weight += heaviest[1]
+    return unique, max_weight
 
 G: list[list[tuple[int, int]]] = [[(1, 2), (2, 3)],
       [(2, 1)],
