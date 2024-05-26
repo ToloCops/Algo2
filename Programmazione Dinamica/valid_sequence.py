@@ -9,7 +9,7 @@ def es1(S: list[int]):
     return min(T[-1], T[-2])
 
 
-def es2(S: list[int]):
+def es2(S):
     n = len(S)
     T = [[0, []] for _ in range(n)]
     for i in range(n):
